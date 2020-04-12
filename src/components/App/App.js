@@ -8,6 +8,7 @@ import Supported from '../Supported/Supported'
 import {HashRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Review from '../Review/Review'
+import Success from '../Success/Success'
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path='/supported' component={Supported}/>
           <Route path='/comments' component={Comments}/>
           <Route path='/review' component={Review}/>
+          <Route path='/success' component={Success}/>
         </Router>
       </div>
     );

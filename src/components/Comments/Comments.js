@@ -1,32 +1,43 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Comments extends Component {
   state = {
-    comments: ''
+    comments: ""
   };
-  handleChangeFor=(event) =>{
+  handleChangeFor = event => {
     this.setState({
-        comments: event.target.value
+      comments: event.target.value
     });
   };
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-    this.props.dispatch({type: 'ADD_COMMENTS', payload:{
-        comments: this.state.comments,
-    }})
-    this.setState({
-        comments:''
-    })
-    this.props.history.push("/review");
-}
+      this.props.dispatch({
+        type: "ADD_COMMENTS",
+        payload: {
+          comments: this.state.comments
+        }
+      });
+      this.setState({
+        comments: ""
+      });
+      this.props.history.push("/review");
+    
+  };
+
   render() {
     return (
       <>
-        <h1>Comments</h1>
-        <input onChange={this.handleChangeFor} placeholder="How are you comment?" value={this.state.comments} />
-        <button onClick={this.handleSubmit} type="submit">Next</button>
+        <h1>Any comments you want to leave</h1>
+        <input
+          onChange={this.handleChangeFor}
+          placeholder="How are you comment?"
+          value={this.state.comments}
+        />
+        <button onClick={this.handleSubmit} type="submit">
+          Next
+        </button>
       </>
     );
   }

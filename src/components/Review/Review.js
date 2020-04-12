@@ -27,10 +27,10 @@ sendCheckout = () => {
     return (
       <div>
           <h1>Review</h1>
-          <p>Feeling:{this.props.feeling.feeling}</p>
-          <p>Understanding:{this.props.understanding.understanding}</p>
-          <p>Support:{this.props.supported.supported}</p>
-          <p>Comments:{this.props.comments.comments}</p>
+          <p>Feeling: {this.props.feeling.feeling}</p>
+          <p>Understanding: {this.props.understanding.understanding}</p>
+          <p>Support: {this.props.supported.supported}</p>
+          <p>Comments: {this.props.comments.comments}</p>
           <button onClick={this.sendCheckout} type="submit">Finish Review</button>
       </div>
     );

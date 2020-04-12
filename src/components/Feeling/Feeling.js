@@ -1,33 +1,47 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Feeling extends Component {
   state = {
-    feeling: ''
+    feeling: ""
   };
-  handleChangeFor=(event) =>{
+  handleChangeFor = event => {
     this.setState({
-        feeling: event.target.value
+      feeling: event.target.value
     });
   };
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-    this.props.dispatch({type: 'ADD_FEELING', payload:{
-        feeling: this.state.feeling,
-    }})
-    this.setState({
-        feeling:''
-    })
-    this.props.history.push("/understanding");
-}
+    if (this.state.feeling === "") {
+      alert("Please put a Number Down");
+    } else {
+      this.props.dispatch({
+        type: "ADD_FEELING",
+        payload: {
+          feeling: this.state.feeling
+        }
+      });
+      this.setState({
+        feeling: ""
+      });
+      this.props.history.push("/understanding");
+    }
+  };
   render() {
-      console.log(this.state.feeling)
+    console.log(this.state.feeling);
     return (
       <>
-        <h1>Feeling</h1>
-        <input onChange={this.handleChangeFor} placeholder="How are you Feeling?" value={this.state.feeling} />
-        <button onClick={this.handleSubmit} type="submit">Next</button>
+        <h1>How well are you understanding the content?</h1>
+        <input
+          onChange={this.handleChangeFor}
+          type="Number"
+          placeholder="How are you Feeling?"
+          value={this.state.feeling}
+        />
+        <button onClick={this.handleSubmit} type="submit">
+          Next
+        </button>
       </>
     );
   }
