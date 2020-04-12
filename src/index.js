@@ -13,7 +13,7 @@ const feeling = (state = [], action) => {
     }
     return state;
   }
-  const comment = (state = [], action) => {
+  const comments = (state = [], action) => {
     if (action.type === `ADD_COMMENTS`) {
       // this will replace the pizza list, payload is array of all pizza
       return  action.payload 
@@ -41,7 +41,7 @@ const feeling = (state = [], action) => {
   const storeInstance = createStore(
     combineReducers({ 
         feeling,
-        comment,
+        comments,
         supported,
         understanding,
      })

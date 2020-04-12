@@ -8,7 +8,7 @@ class Comments extends Component {
   };
   handleChangeFor=(event) =>{
     this.setState({
-        feeling: event.target.value
+        comments: event.target.value
     });
   };
   handleSubmit = (event) => {
@@ -25,7 +25,7 @@ class Comments extends Component {
     return (
       <>
         <h1>Comments</h1>
-        <input onChange={this.handleChangeFor} placeholder="How are you comment?" value={this.state.comment} />
+        <input onChange={this.handleChangeFor} placeholder="How are you comment?" value={this.state.comments} />
         <button onClick={this.handleSubmit} type="submit">Next</button>
       </>
     );
