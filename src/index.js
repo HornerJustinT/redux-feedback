@@ -11,6 +11,9 @@ const feeling = (state = [], action) => {
       // this will replace the pizza list, payload is array of all pizza
       return  action.payload 
     }
+    else if (action.type === 'SEND_REVIEW'){
+        return [];
+      }
     return state;
   }
   const comments = (state = [], action) => {
@@ -18,6 +21,10 @@ const feeling = (state = [], action) => {
       // this will replace the pizza list, payload is array of all pizza
       return  action.payload 
     }
+    else if (action.type === 'SEND_REVIEW'){
+        return [];
+      }
+    
     return state;
   }
 
@@ -26,6 +33,9 @@ const feeling = (state = [], action) => {
       // this will replace the pizza list, payload is array of all pizza
       return  action.payload 
     }
+    else if (action.type === 'SEND_REVIEW'){
+        return [];
+      }
     return state;
   }
 
@@ -34,6 +44,9 @@ const feeling = (state = [], action) => {
       // this will replace the pizza list, payload is array of all pizza
       return  action.payload 
     }
+    else if (action.type === 'SEND_REVIEW'){
+        return [];
+      }
     return state;
   }
 
